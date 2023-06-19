@@ -72,7 +72,6 @@ public class hw1 {
             }
         System.out.println(arr3); 
         } catch (Exception e) {
-            // TODO: handle exception
             System.out.println("Error");
         }       
                 
