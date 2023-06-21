@@ -1,5 +1,7 @@
 package hw3;
 
+import java.util.Scanner;
+
 // Напишите приложение, которое будет запрашивать у пользователя следующие данные,
 // разделенные пробелом:
 // Фамилия Имя Отчество датарождения номертелефона пол
@@ -34,9 +36,53 @@ package hw3;
 // При возникновении проблемы с чтением-записью в файл, 
 // исключение должно быть корректно обработано, пользователь должен увидеть стектрейс ошибки.
 
-
 public class app {
   public static void main(String[] args) {
-    
+    String data = EnterData();
+    parseData(data);
+    writeToFile();
+  }
+
+  public static string EnterData() {
+    Scanner scanner = new Scanner(System.in);
+
+    try {
+      System.out.println("Введите следующие данные, разделенные пробелом: " +
+          "Фамилия Имя Отчество датарождения номертелефона пол: ");
+      String data = scanner.nextLine();
+      return data;
+
+    } catch (InputMismatchException e) {
+      System.err.println("Не число. Попробуйте снова");
+      enterFloat();
+    }
+    scanner.close();
+  }
+
+  public static void parseData(String data) {
+
+    try {
+      System.out.println("Введите фамилию имя отчество: ");
+      String name = scanner.nextLine();
+
+      System.out.println("Введите дату рождения в формате дд.мм.гггг: ");
+      String dayOfBirth = scanner.nextLine();
+
+      System.out.println("Введите номер телефона (начиная с +7): ");
+      int phoneNumber = scanner.nextInt();
+
+      System.out.println("Введите пол (символ латиницей f - женский, m - мужской): ");
+      String sex = scanner.nextLine();
+
+    } catch (InputMismatchException e) {
+      System.err.println("Не число. Попробуйте снова");
+      enterFloat();
+
+    }
+
+  }
+
+  public static void writeToFile() {
+
   }
 }
